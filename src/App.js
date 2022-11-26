@@ -47,7 +47,7 @@ class App extends Component {
 
     const image = document.getElementById("inputimage");
 
-    const { width, height } = image;
+    const { width, height } = Number(image);
 
     return {
       leftCol: clarifaiFace.left_col * width,
@@ -59,7 +59,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === "signout") {
-      this.setState({ initialState });
+      this.setState(initialState);
     } else if (route === "home") {
       this.setState({ isSignedIn: true });
     }
@@ -101,7 +101,7 @@ class App extends Component {
     });
 
     const requestOptions = {
-      method: "POST",
+      method: "post",
       headers: {
         Accept: "application/json",
         Authorization: "Key " + PAT,
