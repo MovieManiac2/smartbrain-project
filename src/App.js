@@ -46,8 +46,8 @@ class App extends Component {
       data.outputs[0].data.regions[0].region_info.bounding_box;
 
     const image = document.getElementById("inputimage");
-
-    const { width, height } = Number(image);
+    const width = Number(image.width);
+    const height = Number(image.height);
 
     return {
       leftCol: clarifaiFace.left_col * width,
@@ -117,8 +117,8 @@ class App extends Component {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => {
-        if (result) {
+      .then((response) => {
+        if (response) {
           fetch("http://localhost:3000/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
@@ -129,8 +129,9 @@ class App extends Component {
             .then((res) => res.json())
             .then((count) => {
               this.setState(Object.assign(this.state.user, { entries: count }));
-            });
-          this.displayFaceBox(this.calculateFaceLocation(result));
+            })
+            .catch(console.log);
+          this.displayFaceBox(this.calculateFaceLocation(response));
         }
       })
       .catch((error) => console.log("error", error));
