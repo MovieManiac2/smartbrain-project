@@ -19,7 +19,7 @@ class Signin extends React.Component {
 
   onSubmitSignIn = (e) => {
     e.preventDefault();
-    fetch("https://inquisitive-faun-f67606.netlify.app/signin", {
+    fetch("https://smartbrain-backend-zx2e.onrender.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

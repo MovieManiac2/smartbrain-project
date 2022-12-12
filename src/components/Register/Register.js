@@ -24,7 +24,7 @@ class Register extends React.Component {
 
   onSubmitSignIn = (e) => {
     e.preventDefault();
-    fetch("https://inquisitive-faun-f67606.netlify.app/register", {
+    fetch("https://smartbrain-backend-zx2e.onrender.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

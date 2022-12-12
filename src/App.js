@@ -119,7 +119,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("https://inquisitive-faun-f67606.netlify.app/image", {
+          fetch("https://smartbrain-backend-zx2e.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
