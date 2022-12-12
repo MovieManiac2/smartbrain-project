@@ -24,7 +24,7 @@ class Register extends React.Component {
 
   onSubmitSignIn = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/register", {
+    fetch("https://inquisitive-faun-f67606.netlify.app/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
